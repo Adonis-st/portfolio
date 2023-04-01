@@ -26,7 +26,7 @@ export const ContactForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col text-white font-medium leading-[1.625rem] tracking-[-.22px]">
+			className="flex flex-col text-white font-medium leading-[1.625rem] tracking-[-.22px] lg:w-[445px]">
 			<input
 				type="text"
 				{...register("name")}
