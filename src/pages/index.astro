@@ -2,370 +2,396 @@
 import { ContactForm } from "../components/ContactForm";
 
 const styles = {
-	headingXl: "font-bold text-[5.5rem] leading-[5.5rem] tracking-[-2.5px]",
-	headingL: "font-bold text-[3rem] leading-[3.5rem] tracking-[-1.5px]",
-	headingM: "font-bold text-[1.5rem] leading-[2rem]",
-	body: "font-medium text-[1.125rem] leading-[1.75rem]",
+  headingXl: "font-bold text-[5.5rem] leading-[5.5rem] tracking-[-2.5px]",
+  headingL: "font-bold text-[3rem] leading-[3.5rem] tracking-[-1.5px]",
+  headingM: "font-bold text-[1.5rem] leading-[2rem]",
+  body: "font-medium text-[1.125rem] leading-[1.75rem]",
 };
 
 const experienceData = [
-	{ name: "HTML", years: 2 },
-	{ name: "CSS", years: 2 },
-	{ name: "Javascript", years: 2 },
-	{ name: "React", years: 1 },
-	{ name: "NextJs", years: 1 },
-	{ name: "Node", years: 2 },
+  { name: "HTML", years: 2 },
+  { name: "CSS", years: 2 },
+  { name: "Javascript", years: 2 },
+  { name: "React", years: 1 },
+  { name: "NextJs", years: 1 },
+  { name: "Node", years: 2 },
 ];
 
 const projectData = [
-	{
-		imgUrl: "/images/thumbnail/invoice-app.jpg",
-		name: "Invoice App",
-		techUsed: "Typescript NextJs tRPC",
-		liveSiteUrl: "https://invoice-app-gold.vercel.app/",
-		githubRepoUrl: "https://github.com/Adonis-st/invoice-app",
-	},
-	{
-		imgUrl: "/images/thumbnail/kanban.jpg",
-		name: "Kanban Task Management App",
-		techUsed: "Typescript NextJs tRPC",
-		liveSiteUrl: "http://task-manger-pink.vercel.app/",
-		githubRepoUrl: "https://github.com/Adonis-st/task-manger",
-	},
-	{
-		imgUrl: "/images/thumbnail/little-lanae.png",
-		name: "Little Lanae",
-		techUsed: "Typescript NextJs Firebase",
-		liveSiteUrl: "https://little-lanae.vercel.app/",
-		githubRepoUrl: "https://github.com/Adonis-st/littlelanae",
-	},
-	{
-		imgUrl: "/images/thumbnail/todo-app.jpg",
-		name: "Todo App",
-		techUsed: "Typescript React Zustand",
-		liveSiteUrl: "https://todo-apps-zustand.vercel.app/",
-		githubRepoUrl: "https://github.com/Adonis-st/todo-apps/tree/main/zustand",
-	},
-	// {
-	// 	imgUrl: "/images/thumbnail/todo-app.jpg",
-	// 	name: "Password Generator",
-	// 	techUsed: "Typescript React Tailwind",
-	// 	liveSiteUrl: "https://password-generator-ochre-nu.vercel.app/",
-	// 	githubRepoUrl: "https://github.com/Adonis-st/todo-apps/tree/main/zustand",
-	// },
+  {
+    imgUrl: "/images/thumbnail/invoice-app.jpg",
+    name: "Invoice App",
+    techUsed: "Typescript NextJs tRPC",
+    liveSiteUrl: "https://invoice-app-gold.vercel.app/",
+    githubRepoUrl: "https://github.com/Adonis-st/invoice-app",
+  },
+  {
+    imgUrl: "/images/thumbnail/kanban.jpg",
+    name: "Kanban App",
+    techUsed: "Typescript NextJs tRPC",
+    liveSiteUrl: "http://task-manger-pink.vercel.app/",
+    githubRepoUrl: "https://github.com/Adonis-st/task-manger",
+  },
+  {
+    imgUrl: "/images/thumbnail/quiz-app.jpg",
+    name: "Quiz App",
+    techUsed: "Typescript NextJs",
+    liveSiteUrl: "https://quiz-app-three-tau.vercel.app/",
+    githubRepoUrl: "https://github.com/Adonis-st/quiz-app",
+  },
+  {
+    imgUrl: "/images/thumbnail/todo-app.jpg",
+    name: "Todo App",
+    techUsed: "Typescript React Zustand",
+    liveSiteUrl: "https://todo-apps-zustand.vercel.app/",
+    githubRepoUrl: "https://github.com/Adonis-st/todo-apps/tree/main/zustand",
+  },
 ];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Adonis Young</title>
-	</head>
-	<body class="bg-coal text-white">
-		<main>
-			<div class="mx-auto w-11/12 mt-4 lg:w-[77%] max-w-[1110px]">
-				<header class="flex max-sm:flex-col items-center sm:justify-between lg:pt-4">
-					<span
-						class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
-						>adonisyoung</span
-					>
-					<div class="flex gap-x-5 mt-3 mb-5">
-						<a href="https://github.com/Adonis-st" target="_blank"
-							><svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="19"
-								viewBox="0 0 25 24"
-								><path
-									fill="#FFF"
-									fill-rule="evenodd"
-									d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
-								></path></svg
-							></a
-						>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Adonis Young</title>
+  </head>
+  <body class="bg-coal text-white">
+    <main>
+      <div class="mx-auto w-11/12 mt-4 lg:w-[77%] max-w-[1110px]">
+        <header
+          class="flex max-sm:flex-col items-center sm:justify-between lg:pt-4"
+        >
+          <span
+            class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
+            >adonisyoung</span
+          >
+          <div class="flex gap-x-5 mt-3 mb-5">
+            <a href="https://github.com/Adonis-st" target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="19"
+                viewBox="0 0 25 24"
+                ><path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+                ></path></svg
+              ></a
+            >
 
-						<a href="https://www.linkedin.com/in/adonis-young-2ab9b4247/" target="_blank"
-							><svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="19"
-								viewBox="0 0 25 24"
-								><path
-									fill="#FFF"
-									fill-rule="evenodd"
-									d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
-								></path></svg
-							></a
-						>
-						<a href="src/Adonis Young Resume.docx" download
-							><svg
-								stroke="currentColor"
-								fill="currentColor"
-								stroke-width="0"
-								version="1.1"
-								viewBox="0 0 16 16"
-								height="21"
-								width="22"
-								xmlns="http://www.w3.org/2000/svg"
-								><path
-									d="M9 4l-2-2h-7v13h16v-11h-7zM8 13.5l-3.5-3.5h2.5v-4h2v4h2.5l-3.5 3.5z"
-								></path></svg
-							></a
-						>
-					</div>
-				</header>
+            <a
+              href="https://www.linkedin.com/in/adonis-young-2ab9b4247/"
+              target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="19"
+                viewBox="0 0 25 24"
+                ><path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+                ></path></svg
+              ></a
+            >
+            <a href="src/Adonis Young Resume.docx" download
+              ><svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                version="1.1"
+                viewBox="0 0 16 16"
+                height="21"
+                width="22"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M9 4l-2-2h-7v13h16v-11h-7zM8 13.5l-3.5-3.5h2.5v-4h2v4h2.5l-3.5 3.5z"
+                ></path></svg
+              ></a
+            >
+          </div>
+        </header>
 
-				<section class="flex max-sm:flex-col items-center text-center">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="530"
-						height="129"
-						class="absolute translate-x-[-60%] hidden"
-						><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
-							><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
-								cx="265"
-								cy="52"
-								rx="264.5"
-								ry="39.5"></ellipse><ellipse cx="265" cy="65" rx="264.5" ry="39.5"
-							></ellipse><ellipse cx="265" cy="77" rx="264.5" ry="39.5"></ellipse><ellipse
-								cx="265"
-								cy="89"
-								rx="264.5"
-								ry="39.5"></ellipse></g
-						></svg
-					>
-					<img
-						src="/images/3EB14B43-F511-4A11-AB2D-EC5709C01B50.png"
-						alt="Hero Image"
-						class="w-[174px] sm:w-[322px] sm:order-2 lg:w-[445px]"
-					/>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="129"
-						height="129"
-						class="absolute hidden translate-x-[160%] mt-16"
-						><circle
-							cx="830.5"
-							cy="585.5"
-							r="64"
-							fill="none"
-							stroke="#FFF"
-							transform="translate(-766 -521)"></circle></svg
-					>
-					<!-- <img
-					src="/images/3EB14B43-F511-4A11-AB2D-EC5709C01B50 (1).png"
-					alt="Hero Image"
-					class="w-[174px]"
-				/> -->
-					<div class="sm:text-left">
-						<h1
-							class={`mt-6 text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] font-bold sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] sm:absolute sm:z-[1] sm:w-[475px] sm:mt-16  lg:w-[709px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]`}>
-							Nice to <span class="sm:block lg:inline">meet you! I'm</span>
-							<span
-								class="underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
-								>Adoins Young</span
-							>.
-						</h1>
-						<h2
-							class="mt-6 text-[2.5rem] leading-[2.5rem] max-sm:hidden tracking-[-1.14px] font-bold sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] opacity-0"
-							aria-hidden="true">
-							Nice to meet you! I'm <span
-								class="underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
-								>Adoins Young</span
-							>.
-						</h2>
-						<p
-							class={`mt-6 font-bold leading-[1.625rem] text-gray lg:${styles.body} lg:w-[445px] lg:mt-28`}>
-							Based in the US, I'm a front-end developer passionate about building accessible
-							web apps that users love.
-						</p>
-						<a
-							href="#contact"
-							class="mt-6 block font-bold leading-[1.625rem] tracking-[2.29px] uppercase underline decoration-neon underline-offset-[14px] lg:mt-10"
-							>Contact Me</a
-						>
-					</div>
-				</section>
+        <section class="flex max-sm:flex-col items-center text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="530"
+            height="129"
+            class="absolute translate-x-[-60%] hidden"
+            ><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
+              ><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="52"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="65"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="77"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="89"
+                rx="264.5"
+                ry="39.5"></ellipse></g
+            ></svg
+          >
+          <img
+            src="/images/hero.png"
+            alt="Hero Image"
+            class="w-[174px] sm:w-[322px] sm:order-2 lg:w-[445px] rounded-md"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="129"
+            height="129"
+            class="absolute hidden translate-x-[160%] mt-16"
+            ><circle
+              cx="830.5"
+              cy="585.5"
+              r="64"
+              fill="none"
+              stroke="#FFF"
+              transform="translate(-766 -521)"></circle></svg
+          >
+          <div class="sm:text-left">
+            <h1
+              class={`mt-6 text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] font-bold sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] sm:absolute sm:z-[1] sm:w-[475px] sm:mt-16  lg:w-[709px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]`}
+            >
+              Nice to <span class="sm:block lg:inline">meet you! I'm</span>
+              <span
+                class="underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
+                >Adoins Young</span
+              >.
+            </h1>
+            <h2
+              class="mt-6 text-[2.5rem] leading-[2.5rem] max-sm:hidden tracking-[-1.14px] font-bold sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] opacity-0"
+              aria-hidden="true"
+            >
+              Nice to meet you! I'm <span
+                class="underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
+                >Adoins Young</span
+              >.
+            </h2>
+            <p
+              class={`mt-6 font-bold leading-[1.625rem] text-gray lg:${styles.body} lg:w-[445px] lg:mt-28`}
+            >
+              Based in the US, I'm a front-end developer passionate about
+              building accessible web apps that users love.
+            </p>
+            <a
+              href="#contact"
+              class="mt-6 block font-bold leading-[1.625rem] tracking-[2.29px] uppercase underline decoration-neon underline-offset-[14px] lg:mt-10"
+              >Contact Me</a
+            >
+          </div>
+        </section>
 
-				<section
-					class="border-t max-sm:border-b border-white mt-16 grid items-center sm:grid-cols-2 lg:grid-cols-none lg:grid-rows-2 lg:grid-flow-col py-12">
-					{
-						experienceData.map((item) => {
-							return (
-								<div class="mb-6 last:mb-0 text-center sm:text-left">
-									<h4
-										class={`font-bold text-[2rem] leading-[2.5rem] tracking-[-1px] sm:${styles.headingL}`}>
-										{item.name}
-									</h4>
-									<span class={`font-medium text-gray leading-[26px] sm:${styles.body}`}>
-										{item.years === 1 ? `${item.years} Year of` : `${item.years} Years`}{" "}
-										Experience
-									</span>
-								</div>
-							);
-						})
-					}
-				</section>
+        <section
+          class="border-t max-sm:border-b border-white mt-16 grid items-center sm:grid-cols-2 lg:grid-cols-none lg:grid-rows-2 lg:grid-flow-col py-12"
+        >
+          {
+            experienceData.map((item) => {
+              return (
+                <div class="mb-6 last:mb-0 text-center sm:text-left">
+                  <h4
+                    class={`font-bold text-[2rem] leading-[2.5rem] tracking-[-1px] sm:${styles.headingL}`}
+                  >
+                    {item.name}
+                  </h4>
+                  <span
+                    class={`font-medium text-gray leading-[26px] sm:${styles.body}`}
+                  >
+                    {item.years === 1
+                      ? `${item.years} Year of`
+                      : `${item.years} Years`}{" "}
+                    Experience
+                  </span>
+                </div>
+              );
+            })
+          }
+        </section>
 
-				<section class="mt-16">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="530"
-						height="129"
-						class="absolute translate-x-[40%] -mt-36 hidden"
-						><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
-							><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
-								cx="265"
-								cy="52"
-								rx="264.5"
-								ry="39.5"></ellipse><ellipse cx="265" cy="65" rx="264.5" ry="39.5"
-							></ellipse><ellipse cx="265" cy="77" rx="264.5" ry="39.5"></ellipse><ellipse
-								cx="265"
-								cy="89"
-								rx="264.5"
-								ry="39.5"></ellipse></g
-						></svg
-					>
-					<div class="flex justify-between items-center">
-						<h2
-							class={`font-bold text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]}`}>
-							Projects
-						</h2>
-						<a
-							href="#contact"
-							class="font-bold leading-[1.625rem] tracking-[2.29px] uppercase underline decoration-neon underline-offset-[14px]"
-							>Contact Me</a
-						>
-					</div>
+        <section class="mt-16">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="530"
+            height="129"
+            class="absolute translate-x-[40%] -mt-36 hidden"
+            ><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
+              ><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="52"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="65"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="77"
+                rx="264.5"
+                ry="39.5"></ellipse><ellipse
+                cx="265"
+                cy="89"
+                rx="264.5"
+                ry="39.5"></ellipse></g
+            ></svg
+          >
+          <div class="flex justify-between items-center">
+            <h2
+              class={`font-bold text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]}`}
+            >
+              Projects
+            </h2>
+            <a
+              href="#contact"
+              class="font-bold leading-[1.625rem] tracking-[2.29px] uppercase underline decoration-neon underline-offset-[14px]"
+              >Contact Me</a
+            >
+          </div>
 
-					<div class="mt-8 grid sm:grid-cols-2 sm:gap-x-5">
-						{
-							projectData.map((project) => {
-								return (
-									<div class="mb-10 sm:last:mb-24">
-										<img
-											src={project.imgUrl}
-											alt={project.name}
-											class="rounded-md w-[343px] lg:w-[540px] "
-										/>
-										<div class={`${styles.headingM} mt-4`}>{project.name}</div>
-										<div
-											class={`${styles.body} text-gray mt-1`}
-											style="word-spacing: 15px;">
-											{project.techUsed}
-										</div>
-										<div class="mt-5 uppercase font-bold leading-[1.625rem] tracking-[2.29px] underline decoration-neon underline-offset-[14px]">
-											<a href={project.liveSiteUrl} target="_blank" class="mr-8">
-												View Project
-											</a>
-											<a href={project.githubRepoUrl} target="_blank">
-												View Code
-											</a>
-										</div>
-									</div>
-								);
-							})
-						}
-					</div>
-				</section>
-			</div>
+          <div class="mt-8 grid sm:grid-cols-2 sm:gap-x-5">
+            {
+              projectData.map((project) => {
+                return (
+                  <div class="mb-10 sm:last:mb-24">
+                    <img
+                      src={project.imgUrl}
+                      alt={project.name}
+                      class="rounded-md w-[343px] lg:w-[540px] "
+                    />
+                    <div class={`${styles.headingM} mt-4`}>{project.name}</div>
+                    <div
+                      class={`${styles.body} text-gray mt-1`}
+                      style="word-spacing: 15px;"
+                    >
+                      {project.techUsed}
+                    </div>
+                    <div class="mt-5 uppercase font-bold leading-[1.625rem] tracking-[2.29px] underline decoration-neon underline-offset-[14px]">
+                      <a
+                        href={project.liveSiteUrl}
+                        target="_blank"
+                        class="mr-8"
+                      >
+                        View Project
+                      </a>
+                      <a href={project.githubRepoUrl} target="_blank">
+                        View Code
+                      </a>
+                    </div>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </section>
+      </div>
 
-			<div class="bg-dark_gray">
-				<section
-					class="pt-8 text-center pb-24 mx-auto w-11/12 flex max-lg:flex-col sm:w-[445px] sm:pb-16 lg:justify-between lg:w-[1110px]"
-					id="contact">
-					<div class="lg:text-left sm:w-[445px]">
-						<h2
-							class="font-bold text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px]">
-							Contact
-						</h2>
-						<p class="font-medium text-gray leading-[1.625rem] mb-8 mt-4">
-							Thank you for your interest in my work! Please fill out the form below to get
-							in touch with me regarding any questions or inquiries you may have. I will get
-							back to you as soon as possible.
-						</p>
-					</div>
+      <div class="bg-dark_gray">
+        <section
+          class="pt-8 text-center pb-24 mx-auto w-11/12 flex max-lg:flex-col sm:w-[445px] sm:pb-16 lg:justify-between lg:w-[1110px]"
+          id="contact"
+        >
+          <div class="lg:text-left sm:w-[445px]">
+            <h2
+              class="font-bold text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px]"
+            >
+              Contact
+            </h2>
+            <p class="font-medium text-gray leading-[1.625rem] mb-8 mt-4">
+              Thank you for your interest in my work! Please fill out the form
+              below to get in touch with me regarding any questions or inquiries
+              you may have. I will get back to you as soon as possible.
+            </p>
+          </div>
 
-					<ContactForm client:visible />
-				</section>
+          <ContactForm client:visible />
+        </section>
 
-				<footer
-					class="flex max-sm:flex-col items-center py-6 mx-auto w-11/12 sm:justify-between border-t border-white max-w-[1110px]">
-					<span
-						class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
-						>adonisyoung</span
-					>
-					<div class="flex gap-x-5 mt-3 mb-5">
-						<a href="https://github.com/Adonis-st" target="_blank"
-							><svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="19"
-								viewBox="0 0 25 24"
-								><path
-									fill="#FFF"
-									fill-rule="evenodd"
-									d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
-								></path></svg
-							></a
-						>
+        <footer
+          class="flex max-sm:flex-col items-center py-6 mx-auto w-11/12 sm:justify-between border-t border-white max-w-[1110px]"
+        >
+          <span
+            class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
+            >adonisyoung</span
+          >
+          <div class="flex gap-x-5 mt-3 mb-5">
+            <a href="https://github.com/Adonis-st" target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="19"
+                viewBox="0 0 25 24"
+                ><path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+                ></path></svg
+              ></a
+            >
 
-						<a href="https://www.linkedin.com/in/adonis-young-2ab9b4247/" target="_blank"
-							><svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="19"
-								viewBox="0 0 25 24"
-								><path
-									fill="#FFF"
-									fill-rule="evenodd"
-									d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
-								></path></svg
-							></a
-						>
-						<a href="src/Adonis Young Resume.docx" download
-							><svg
-								stroke="currentColor"
-								fill="currentColor"
-								stroke-width="0"
-								version="1.1"
-								viewBox="0 0 16 16"
-								height="21"
-								width="22"
-								xmlns="http://www.w3.org/2000/svg"
-								><path
-									d="M9 4l-2-2h-7v13h16v-11h-7zM8 13.5l-3.5-3.5h2.5v-4h2v4h2.5l-3.5 3.5z"
-								></path></svg
-							></a
-						>
-					</div>
-				</footer>
-			</div>
-		</main>
-	</body>
+            <a
+              href="https://www.linkedin.com/in/adonis-young-2ab9b4247/"
+              target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="19"
+                viewBox="0 0 25 24"
+                ><path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+                ></path></svg
+              ></a
+            >
+            <a href="src/Adonis Young Resume.docx" download
+              ><svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                version="1.1"
+                viewBox="0 0 16 16"
+                height="21"
+                width="22"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M9 4l-2-2h-7v13h16v-11h-7zM8 13.5l-3.5-3.5h2.5v-4h2v4h2.5l-3.5 3.5z"
+                ></path></svg
+              ></a
+            >
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
 
-	<style>
-		html,
-		body {
-			padding: 0;
-			margin: 0;
-			font-family: "Space Grotesk", sans-serif;
-			scroll-behavior: smooth;
-		}
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
+    }
 
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-		}
-	</style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  </style>
 </html>
