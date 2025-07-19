@@ -20,7 +20,7 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col text-white font-medium leading-[1.625rem] tracking-[-.22px] lg:w-[445px]"
+      className="flex flex-col text-white font-medium leading-6.5 tracking-[-.22px] lg:w-[445px]"
     >
       <input
         type="text"
@@ -43,7 +43,7 @@ export const ContactForm = () => {
 
       <button
         type="submit"
-        className="underline decoration-neon underline-offset-[14px] self-end font-bold leading-[1.625rem] tracking-[2.29px]"
+        className="underline decoration-neon underline-offset-14 self-end font-bold leading-6.5 tracking-[2.29px]"
       >
         SEND MESSAGE
       </button>
