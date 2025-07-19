@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.9",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
     "@hookform/resolvers": "^3.3.3",
-    "astro": "^4.0.8",
+    "astro": "^5.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
