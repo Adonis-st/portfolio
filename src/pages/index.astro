@@ -64,17 +64,18 @@ const projectData = [
     />
     <title>Adonis Young</title>
   </head>
-  <body class="bg-coal text-white">
+  <body class="bg-coal text-white relative">
     <main>
+      <div class="fixed inset-0 -z-10 bg-mesh"></div>
       <div class="mx-auto w-11/12 mt-4 lg:w-[77%] max-w-[1110px]">
         <header
-          class="flex max-sm:flex-col items-center sm:justify-between lg:pt-4"
+          class="sticky top-4 z-50 flex max-sm:flex-col items-center sm:justify-between lg:pt-4 glass rounded-full px-5 py-3"
         >
           <span
             class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
             >adonisyoung</span
           >
-          <div class="flex gap-x-5 mt-3 mb-5">
+          <div class="flex gap-x-5 mt-3 mb-5 sm:mt-0 sm:mb-0">
             <a href="https://github.com/Adonis-st" target="_blank"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,56 +124,18 @@ const projectData = [
         </header>
 
         <section class="flex max-sm:flex-col items-center text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="530"
-            height="129"
-            class="absolute translate-x-[-60%] hidden"
-            ><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
-              ><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="52"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="65"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="77"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="89"
-                rx="264.5"
-                ry="39.5"></ellipse></g
-            ></svg
-          >
           <img
             src="/images/hero.png"
             alt="Hero Image"
-            class="w-[174px] sm:w-[322px] sm:order-2 lg:w-[445px] rounded-md"
+            class="w-[174px] sm:w-[322px] sm:order-2 lg:w-[445px] rounded-md float-slow"
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="129"
-            height="129"
-            class="absolute hidden translate-x-[160%] mt-16"
-            ><circle
-              cx="830.5"
-              cy="585.5"
-              r="64"
-              fill="none"
-              stroke="#FFF"
-              transform="translate(-766 -521)"></circle></svg
-          >
           <div class="sm:text-left">
             <h1
               class={`mt-6 text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] font-bold sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] sm:absolute sm:z-[1] sm:w-[475px] sm:mt-16  lg:w-[709px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]`}
             >
               Nice to <span class="sm:block lg:inline">meet you! I'm</span>
               <span
-                class="underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
+                class="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent underline decoration-neon underline-offset-[8px] sm:underline-offset-[14px]"
                 >Adoins Young</span
               >.
             </h1>
@@ -191,66 +154,44 @@ const projectData = [
               Based in the US, I'm a front-end developer passionate about
               building accessible web apps that users love.
             </p>
-            <a
-              href="#contact"
-              class="mt-6 block font-bold leading-[1.625rem] tracking-[2.29px] uppercase underline decoration-neon underline-offset-[14px] lg:mt-10"
-              >Contact Me</a
-            >
+            <div class="mt-6 lg:mt-10 flex items-center gap-4">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/10 px-5 py-3 font-bold tracking-[2.29px] hover:bg-white/15 transition"
+                >Contact Me</a
+              >
+              <a
+                href="src/Adonis Young Resume.docx"
+                download
+                class="inline-flex items-center justify-center rounded-md bg-neon text-coal px-5 py-3 font-bold tracking-[2.29px] hover:bg-neon/90 transition shadow-[var(--shadow-neon)]"
+                >Download CV</a
+              >
+            </div>
           </div>
         </section>
 
         <section
-          class="border-t max-sm:border-b border-white mt-16 grid items-center sm:grid-cols-2 lg:grid-cols-none lg:grid-rows-2 lg:grid-flow-col py-12"
+          class="border-t max-sm:border-b border-white/20 mt-16 grid items-stretch sm:grid-cols-2 lg:grid-cols-3 gap-4 py-12"
         >
-          {
-            experienceData.map((item) => {
-              return (
-                <div class="mb-6 last:mb-0 text-center sm:text-left">
-                  <h4
-                    class={`font-bold text-[2rem] leading-[2.5rem] tracking-[-1px] sm:${styles.headingL}`}
-                  >
-                    {item.name}
-                  </h4>
-                  <span
-                    class={`font-medium text-gray leading-[26px] sm:${styles.body}`}
-                  >
-                    {item.years === 1
-                      ? `${item.years} Year of`
-                      : `${item.years} Years`}{" "}
-                    Experience
-                  </span>
-                </div>
-              );
-            })
-          }
+          {experienceData.map((item) => {
+            return (
+              <div class="card p-6 text-center sm:text-left hover:border-neon/40 transition">
+                <h4
+                  class={`font-bold text-[2rem] leading-[2.5rem] tracking-[-1px] sm:${styles.headingL}`}
+                >
+                  {item.name}
+                </h4>
+                <span
+                  class={`font-medium text-gray leading-[26px] sm:${styles.body}`}
+                >
+                  {item.years === 1 ? `${item.years} Year of` : `${item.years} Years`} Experience
+                </span>
+              </div>
+            );
+          })}
         </section>
 
         <section class="mt-16">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="530"
-            height="129"
-            class="absolute translate-x-[40%] -mt-36 hidden"
-            ><g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25"
-              ><ellipse cx="265" cy="40" rx="264.5" ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="52"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="65"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="77"
-                rx="264.5"
-                ry="39.5"></ellipse><ellipse
-                cx="265"
-                cy="89"
-                rx="264.5"
-                ry="39.5"></ellipse></g
-            ></svg
-          >
           <div class="flex justify-between items-center">
             <h2
               class={`font-bold text-[2.5rem] leading-[2.5rem] tracking-[-1.14px] sm:text-[4.5rem] sm:leading-[4.5rem] sm:tracking-[-2.05px] lg:text-[5.5rem] lg:leading-[5.5rem] lg:tracking-[-2.5px]}`}
@@ -265,43 +206,48 @@ const projectData = [
           </div>
 
           <div class="mt-8 grid sm:grid-cols-2 sm:gap-x-5">
-            {
-              projectData.map((project) => {
-                return (
-                  <div class="mb-10 sm:last:mb-24">
+            {projectData.map((project) => {
+              return (
+                <div class="mb-10 sm:last:mb-24 group">
+                  <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white/5">
                     <img
                       src={project.imgUrl}
                       alt={project.name}
-                      class="rounded-md w-[343px] lg:w-[540px] "
+                      class="rounded-xl w-[343px] lg:w-[540px] transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div class={`${styles.headingM} mt-4`}>{project.name}</div>
-                    <div
-                      class={`${styles.body} text-gray mt-1`}
-                      style="word-spacing: 15px;"
-                    >
-                      {project.techUsed}
-                    </div>
-                    <div class="mt-5 uppercase font-bold leading-[1.625rem] tracking-[2.29px] underline decoration-neon underline-offset-[14px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <a
                         href={project.liveSiteUrl}
                         target="_blank"
-                        class="mr-8"
+                        class="inline-flex items-center justify-center rounded-md bg-neon text-coal px-4 py-2 text-sm font-bold hover:bg-neon/90 transition shadow-[var(--shadow-neon)]"
                       >
                         View Project
                       </a>
-                      <a href={project.githubRepoUrl} target="_blank">
+                      <a
+                        href={project.githubRepoUrl}
+                        target="_blank"
+                        class="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold hover:bg-white/15 transition"
+                      >
                         View Code
                       </a>
                     </div>
                   </div>
-                );
-              })
-            }
+                  <div class={`${styles.headingM} mt-4`}>{project.name}</div>
+                  <div
+                    class={`${styles.body} text-gray mt-1`}
+                    style="word-spacing: 15px;"
+                  >
+                    {project.techUsed}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       </div>
 
-      <div class="bg-dark_gray">
+      <div class="bg-dark_gray/60 border-t border-white/10">
         <section
           class="pt-8 text-center pb-24 mx-auto w-11/12 flex max-lg:flex-col sm:w-[445px] sm:pb-16 lg:justify-between lg:w-[1110px]"
           id="contact"
@@ -319,11 +265,13 @@ const projectData = [
             </p>
           </div>
 
-          <ContactForm client:visible />
+          <div class="card p-6">
+            <ContactForm client:visible />
+          </div>
         </section>
 
         <footer
-          class="flex max-sm:flex-col items-center py-6 mx-auto w-11/12 sm:justify-between border-t border-white max-w-[1110px]"
+          class="flex max-sm:flex-col items-center py-6 mx-auto w-11/12 sm:justify-between border-t border-white/10 max-w-[1110px]"
         >
           <span
             class={`${styles.headingM} sm:text-[2rem] sm:leading-[2rem] sm:tracking-[-0.44px]`}
@@ -355,7 +303,7 @@ const projectData = [
                 ><path
                   fill="#FFF"
                   fill-rule="evenodd"
-                  d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+                  d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c 0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
                 ></path></svg
               ></a
             >
