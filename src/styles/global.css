@@ -5,3 +5,41 @@
   --color-gray: #d9d9d9;
   --color-dark_gray: #242424;
 }
+
+/* Modern helpers */
+:root {
+  --shadow-neon: 0 0 0 3px color-mix(in oklab, var(--color-neon) 30%, transparent);
+}
+
+/***** Animations *****/
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fade-in-up .7s ease both; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+/***** Glass + cards *****/
+.glass {
+  background-color: color-mix(in oklab, var(--color-dark_gray), transparent 65%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in oklab, white 18%, transparent);
+}
+.card {
+  @apply rounded-xl border border-white/10 bg-white/5; /* tailwind v4 enabled */
+}
+
+/***** Background mesh overlay *****/
+.bg-mesh {
+  background:
+    radial-gradient(60% 40% at 20% 0%, color-mix(in oklab, var(--color-neon) 25%, transparent) 0%, transparent 70%),
+    radial-gradient(60% 40% at 80% 10%, color-mix(in oklab, white 14%, transparent) 0%, transparent 70%),
+    radial-gradient(80% 60% at 50% 80%, color-mix(in oklab, var(--color-neon) 15%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}

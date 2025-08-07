@@ -20,30 +20,30 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col text-white font-medium leading-6.5 tracking-[-.22px] lg:w-[445px]"
+      className="flex flex-col text-white font-medium leading-6.5 tracking-[-.22px] lg:w-[445px] gap-4"
     >
       <input
         type="text"
         {...register("name")}
-        placeholder="NAME"
-        className="bg-transparent border-b border-white p-3 focus:outline-none mb-4 "
+        placeholder="Name"
+        className="bg-white/5 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-neon/60 focus:border-neon/50 placeholder:uppercase placeholder:text-gray/60 transition"
       />
       <input
         type="text"
         {...register("email")}
-        placeholder="EMAIL"
-        className="bg-transparent border-b border-white p-3 focus:outline-none mb-4 "
+        placeholder="Email"
+        className="bg-white/5 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-neon/60 focus:border-neon/50 placeholder:uppercase placeholder:text-gray/60 transition"
       />
       <textarea
         {...register("message")}
-        placeholder="MESSAGE"
+        placeholder="Message"
         rows={4}
-        className="bg-transparent border-b border-white p-3 focus:outline-none resize-none mb-8 "
+        className="bg-white/5 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-neon/60 focus:border-neon/50 placeholder:uppercase placeholder:text-gray/60 resize-none transition"
       />
 
       <button
         type="submit"
-        className="underline decoration-neon underline-offset-14 self-end font-bold leading-6.5 tracking-[2.29px]"
+        className="self-end inline-flex items-center gap-2 rounded-md bg-neon text-coal px-5 py-3 font-bold leading-6.5 tracking-[2.29px] hover:bg-neon/90 active:bg-neon/80 transition shadow-[var(--shadow-neon)]"
       >
         SEND MESSAGE
       </button>
